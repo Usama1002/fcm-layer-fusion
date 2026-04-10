@@ -1,0 +1,11 @@
+{
+  "profiling": 15.920719385147095,
+  "similarity": 0.11783456802368164,
+  "community_detection": 0.003319263458251953,
+  "selection_assembly": 0.0013897418975830078,
+  "lora_recovery": 71.08631992340088,
+  "total_fcm": 87.12958288192749,
+  "shortgpt_compress": 3.849283218383789,
+  "shortgpt_lora": 72.02237749099731,
+  "total_shortgpt": 75.8716607093811
+}

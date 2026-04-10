@@ -1,0 +1,13 @@
+torch>=2.0
+transformers>=4.40
+datasets>=2.19
+accelerate>=0.30
+peft>=0.11
+lm-eval>=0.4
+matplotlib>=3.8
+seaborn>=0.13
+numpy>=1.26
+scipy>=1.12
+leidenalg>=0.10
+igraph>=0.11
+tqdm

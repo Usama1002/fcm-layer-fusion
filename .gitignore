@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.npy
+*.pth
+*.pt
+*.bin
+*.safetensors
+*.log
+.env
+wandb/
+*.egg-info/
+dist/
+build/
+.cache/
+.DS_Store
