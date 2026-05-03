@@ -35,9 +35,9 @@ All results at 2x compression (layers halved), LoRA r=16, 500 recovery steps. Wi
 | FlattenGPT | 38.15 +/- 1.42 | 40.12 +/- 0.95 | 29.80 +/- 1.12 |
 | SWM | 41.20 +/- 2.15 | 44.55 +/- 1.88 | 31.40 +/- 1.45 |
 | DeltaLLM | 35.60 +/- 1.05 | 38.25 +/- 0.82 | 27.95 +/- 0.74 |
-| **FCM (ours)** | **26.65 +/- 0.94** | **35.25 +/- 1.15** | **24.18 +/- 0.82** |
+| **FCM (ours)** | **26.65 +/- 0.94*** | **35.25 +/- 1.15*** | **24.18 +/- 0.82*** |
 
-All methods at 2x compression with identical 500-step LoRA recovery (r=16). Mean +/- std over 3 seeds. Raw data in `results/exp20/baseline_comparison.json`.
+All methods at 2x compression with identical 500-step LoRA recovery (r=16). Mean +/- std over 3 seeds. `*` on each FCM cell indicates that FCM significantly outperforms every baseline in that column under a two-sided Welch's t-test with Holm-Bonferroni correction across all 12 (anchor, baseline) cells (p_corr<0.05). Per-cell test statistics in `results/exp20/baseline_comparison.json`.
 
 ### Compression Sweep on Qwen2.5-14B
 

@@ -35,9 +35,29 @@
     "Qwen2.5-14B": {"vs_ShortGPT": 25.5, "vs_FlattenGPT": 18.9, "vs_SWM": 23.0, "vs_DeltaLLM": 13.5}
   },
   "summary": {
-    "fcm_wins_anchor_x_method": "9 of 9",
+    "fcm_wins_anchor_x_method": "12 of 12 cells",
     "strongest_competitor": "DeltaLLM",
     "fcm_reduction_range_vs_DeltaLLM_pct": [7.8, 25.1],
     "fcm_reduction_range_overall_pct": [7.8, 35.3]
+  },
+  "significance_test": {
+    "test": "Welch's two-sided t-test from summary stats (means, stds, n=3 per group)",
+    "correction": "Holm-Bonferroni across m=12 (anchor x baseline) comparisons",
+    "alpha": 0.05,
+    "per_cell": [
+      {"anchor": "Qwen2.5-7B",   "baseline": "ShortGPT",   "t": 10.54, "df": 2.43, "p_raw": 0.00436, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "Qwen2.5-7B",   "baseline": "FlattenGPT", "t": 11.70, "df": 3.47, "p_raw": 0.00066, "p_corr": 0.00721, "verdict": "*"},
+      {"anchor": "Qwen2.5-7B",   "baseline": "SWM",        "t": 10.74, "df": 2.74, "p_raw": 0.00257, "p_corr": 0.02568, "verdict": "*"},
+      {"anchor": "Qwen2.5-7B",   "baseline": "DeltaLLM",   "t": 11.00, "df": 3.95, "p_raw": 0.00041, "p_corr": 0.00497, "verdict": "*"},
+      {"anchor": "LLaMA-3.1-8B", "baseline": "ShortGPT",   "t":  6.33, "df": 3.51, "p_raw": 0.00489, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "LLaMA-3.1-8B", "baseline": "FlattenGPT", "t":  5.65, "df": 3.86, "p_raw": 0.00535, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "LLaMA-3.1-8B", "baseline": "SWM",        "t":  7.31, "df": 3.31, "p_raw": 0.00375, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "LLaMA-3.1-8B", "baseline": "DeltaLLM",   "t":  3.68, "df": 3.62, "p_raw": 0.02530, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "Qwen2.5-14B",  "baseline": "ShortGPT",   "t":  6.77, "df": 2.69, "p_raw": 0.00926, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "Qwen2.5-14B",  "baseline": "FlattenGPT", "t":  7.01, "df": 3.67, "p_raw": 0.00300, "p_corr": 0.02697, "verdict": "*"},
+      {"anchor": "Qwen2.5-14B",  "baseline": "SWM",        "t":  7.51, "df": 3.16, "p_raw": 0.00408, "p_corr": 0.03001, "verdict": "*"},
+      {"anchor": "Qwen2.5-14B",  "baseline": "DeltaLLM",   "t":  5.91, "df": 3.96, "p_raw": 0.00424, "p_corr": 0.03001, "verdict": "*"}
+    ],
+    "summary": "All 12 cells significant at p_corr<0.05; 0 cells reach p_corr<0.001 due to small n=3 sample size and 12-fold Holm-Bonferroni correction; smallest gap (LLaMA-3.1-8B vs DeltaLLM) has raw p=0.025."
   }
 }
