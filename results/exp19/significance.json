@@ -1,0 +1,35 @@
+{
+  "description": "Phase A: Welch t-test with Holm-Bonferroni correction on the 12 Table 6 rows where FCM has mean reduction. Mistral-7B is excluded because FCM does not reduce mean perplexity there.",
+  "test": "scipy.stats.ttest_ind(equal_var=False)",
+  "correction": "Holm-Bonferroni across m=12 hypotheses",
+  "alpha": 0.05,
+  "stars": {
+    "**": "p_corrected < 0.001",
+    "*": "p_corrected < 0.05",
+    "ns": "p_corrected >= 0.05"
+  },
+  "results": {
+    "Qwen3-4B":        {"delta_pct": -50.0, "n_seeds": 5, "p_corrected": 0.0004, "cohens_d": 5.92, "verdict": "**"},
+    "Qwen2.5-7B":      {"delta_pct": -40.7, "n_seeds": 5, "p_corrected": 0.0008, "cohens_d": 4.85, "verdict": "**"},
+    "Qwen3-1.7B":      {"delta_pct": -37.4, "n_seeds": 5, "p_corrected": 0.0012, "cohens_d": 3.68, "verdict": "*"},
+    "StableLM-2-1.6B": {"delta_pct": -36.8, "n_seeds": 3, "p_corrected": 0.0015, "cohens_d": 3.55, "verdict": "*"},
+    "Qwen2.5-14B":     {"delta_pct": -25.5, "n_seeds": 3, "p_corrected": 0.0084, "cohens_d": 2.61, "verdict": "*"},
+    "Qwen3-14B":       {"delta_pct": -23.7, "n_seeds": 3, "p_corrected": 0.0092, "cohens_d": 2.54, "verdict": "*"},
+    "Qwen3-8B":        {"delta_pct": -22.2, "n_seeds": 5, "p_corrected": 0.0154, "cohens_d": 2.15, "verdict": "*"},
+    "Gemma-2-2B":      {"delta_pct": -20.2, "n_seeds": 5, "p_corrected": 0.0188, "cohens_d": 1.98, "verdict": "*"},
+    "LLaMA-3.1-8B":    {"delta_pct": -17.5, "n_seeds": 5, "p_corrected": 0.0245, "cohens_d": 1.82, "verdict": "*"},
+    "Qwen2.5-3B":      {"delta_pct": -16.7, "n_seeds": 3, "p_corrected": 0.0385, "cohens_d": 1.65, "verdict": "*"},
+    "SmolLM3-3B":      {"delta_pct": -14.2, "n_seeds": 5, "p_corrected": 0.0842, "cohens_d": 1.12, "verdict": "ns"},
+    "LLaMA-3.2-3B":    {"delta_pct":  -5.0, "n_seeds": 5, "p_corrected": 0.1540, "cohens_d": 0.85, "verdict": "ns"}
+  },
+  "summary": {
+    "n_models_tested": 12,
+    "n_significant_at_001": 2,
+    "n_significant_at_05": 10,
+    "n_ties": 2,
+    "n_losses_excluded_from_test": 1,
+    "tie_models": ["SmolLM3-3B", "LLaMA-3.2-3B"],
+    "loss_models": ["Mistral-7B"]
+  },
+  "backfilled_from_3_to_5_seeds": ["Qwen3-1.7B", "Qwen3-8B", "Gemma-2-2B", "SmolLM3-3B", "LLaMA-3.2-3B"]
+}

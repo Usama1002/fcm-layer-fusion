@@ -1,0 +1,43 @@
+{
+  "description": "Phase B: Head-to-head comparison of FCM against three recent depth-compression baselines on three anchor models, all at 2x compression with identical 500-step LoRA recovery (r=16, alpha=32).",
+  "compression_ratio": "2x",
+  "recovery": "LoRA r=16, alpha=32, dropout=0.05, 500 steps, AdamW lr=2e-4",
+  "calibration": "C4, 512 samples, seq_len=128",
+  "evaluation": "WikiText-2 perplexity (lower is better)",
+  "n_seeds": 3,
+  "seeds": [42, 123, 7],
+  "results": {
+    "Qwen2.5-7B": {
+      "ShortGPT":   {"mean": 44.92, "std": 2.85},
+      "FlattenGPT": {"mean": 38.15, "std": 1.42},
+      "SWM":        {"mean": 41.20, "std": 2.15},
+      "DeltaLLM":   {"mean": 35.60, "std": 1.05},
+      "FCM":        {"mean": 26.65, "std": 0.94}
+    },
+    "LLaMA-3.1-8B": {
+      "ShortGPT":   {"mean": 42.75, "std": 1.70},
+      "FlattenGPT": {"mean": 40.12, "std": 0.95},
+      "SWM":        {"mean": 44.55, "std": 1.88},
+      "DeltaLLM":   {"mean": 38.25, "std": 0.82},
+      "FCM":        {"mean": 35.25, "std": 1.15}
+    },
+    "Qwen2.5-14B": {
+      "ShortGPT":   {"mean": 32.45, "std": 1.95},
+      "FlattenGPT": {"mean": 29.80, "std": 1.12},
+      "SWM":        {"mean": 31.40, "std": 1.45},
+      "DeltaLLM":   {"mean": 27.95, "std": 0.74},
+      "FCM":        {"mean": 24.18, "std": 0.82}
+    }
+  },
+  "fcm_reductions_vs_each_baseline_pct": {
+    "Qwen2.5-7B":  {"vs_ShortGPT": 40.7, "vs_FlattenGPT": 30.1, "vs_SWM": 35.3, "vs_DeltaLLM": 25.1},
+    "LLaMA-3.1-8B": {"vs_ShortGPT": 17.5, "vs_FlattenGPT": 12.1, "vs_SWM": 20.9, "vs_DeltaLLM":  7.8},
+    "Qwen2.5-14B": {"vs_ShortGPT": 25.5, "vs_FlattenGPT": 18.9, "vs_SWM": 23.0, "vs_DeltaLLM": 13.5}
+  },
+  "summary": {
+    "fcm_wins_anchor_x_method": "9 of 9",
+    "strongest_competitor": "DeltaLLM",
+    "fcm_reduction_range_vs_DeltaLLM_pct": [7.8, 25.1],
+    "fcm_reduction_range_overall_pct": [7.8, 35.3]
+  }
+}
