@@ -134,17 +134,6 @@ FCM has been tested on the following thirteen models spanning six architecture f
 
 **14B scale**: Qwen2.5-14B, Qwen3-14B
 
-## Citation
-
-```bibtex
-@inproceedings{usama2026fcm,
-  title     = {Beyond Adjacent Layers: Graph-Guided Layer Fusion for Compressing Large Language Models},
-  author    = {Usama, Muhammad},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year      = {2026}
-}
-```
-
 ## License
 
 This project is released for research purposes. License TBD.
