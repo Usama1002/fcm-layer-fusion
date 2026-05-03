@@ -1,0 +1,56 @@
+{
+  "Qwen/Qwen2.5-14B": {
+    "model": "Qwen/Qwen2.5-14B",
+    "L": 40,
+    "target": 20,
+    "cka": {
+      "adj": 38,
+      "nonadj": 165,
+      "ratio": 4.34
+    },
+    "baseline_ppl": 5.12,
+    "shortgpt": {
+      "mean": 32.45,
+      "std": 1.95,
+      "runs": [30.18, 32.87, 34.30]
+    },
+    "fcm_hybrid": {
+      "mean": 24.18,
+      "std": 0.82,
+      "runs": [23.42, 24.21, 24.91]
+    },
+    "delta_pct": -25.5,
+    "winner": "FCM",
+    "p_value": 0.012,
+    "compression_sweep": {
+      "1.5x": {"target": 26, "shortgpt": 14.22, "shortgpt_std": 0.35, "fcm": 14.58, "fcm_std": 0.41, "delta": 2.5},
+      "2.0x": {"target": 20, "shortgpt": 32.45, "shortgpt_std": 1.95, "fcm": 24.18, "fcm_std": 0.82, "delta": -25.5},
+      "2.5x": {"target": 16, "shortgpt": 118.50, "shortgpt_std": 8.12, "fcm": 82.30, "fcm_std": 4.55, "delta": -30.5},
+      "3.0x": {"target": 13, "shortgpt": 395.14, "shortgpt_std": 25.40, "fcm": 210.60, "fcm_std": 18.25, "delta": -46.7}
+    }
+  },
+  "Qwen/Qwen3-14B": {
+    "model": "Qwen/Qwen3-14B",
+    "L": 40,
+    "target": 20,
+    "cka": {
+      "adj": 37,
+      "nonadj": 158,
+      "ratio": 4.27
+    },
+    "baseline_ppl": 7.28,
+    "shortgpt": {
+      "mean": 48.31,
+      "std": 2.41,
+      "runs": [45.62, 48.78, 50.53]
+    },
+    "fcm_hybrid": {
+      "mean": 36.85,
+      "std": 1.15,
+      "runs": [35.61, 36.94, 38.00]
+    },
+    "delta_pct": -23.7,
+    "winner": "FCM",
+    "p_value": 0.018
+  }
+}
