@@ -137,9 +137,9 @@ FCM has been tested on the following thirteen models spanning six architecture f
 ## Citation
 
 ```bibtex
-@inproceedings{anonymous2026fcm,
+@inproceedings{usama2026fcm,
   title     = {Beyond Adjacent Layers: Graph-Guided Layer Fusion for Compressing Large Language Models},
-  author    = {Anonymous},
+  author    = {Usama, Muhammad},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year      = {2026}
 }
