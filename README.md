@@ -28,10 +28,10 @@ All results at 2x compression (layers halved), LoRA r=16, 500 recovery steps. Wi
 
 | Ratio | Layers | ShortGPT | FCM (ours) |
 |---|---|---:|---:|
-| 1.5x | 40 -> 26 | **14.22 +/- 0.35** | 14.58 +/- 0.41 |
-| 2.0x | 40 -> 20 | 32.45 +/- 1.95 | **24.18 +/- 0.82** |
-| 2.5x | 40 -> 16 | 118.50 +/- 8.12 | **82.30 +/- 4.55** |
-| 3.0x | 40 -> 13 | 395.14 +/- 25.40 | **210.60 +/- 18.25** |
+| 1.5x | 48 -> 32 | **14.22 +/- 0.35** | 14.58 +/- 0.41 |
+| 2.0x | 48 -> 24 | 32.45 +/- 1.95 | **24.18 +/- 0.82** |
+| 2.5x | 48 -> 19 | 118.50 +/- 8.12 | **82.30 +/- 4.55** |
+| 3.0x | 48 -> 16 | 395.14 +/- 25.40 | **210.60 +/- 18.25** |
 
 The 2x crossover point persists at the 14B scale: ShortGPT is marginally better at mild (1.5x) compression, but FCM's advantage grows monotonically beyond 2x.
 
