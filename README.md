@@ -2,7 +2,7 @@
 
 **NeurIPS 2026 (Main Track, Poster)**
 
-Muhammad Usama, Summer Yeoreum Jung (Braindeck Inc, Seoul, Republic of Korea)
+Muhammad Usama, Yeoreum Jung (Braindeck Inc, Seoul, Republic of Korea)
 
 This repository is the official code release for our NeurIPS 2026 paper.
 
@@ -176,7 +176,7 @@ If you use this code, please cite our NeurIPS 2026 paper:
 ```bibtex
 @inproceedings{usama2026beyond,
   title     = {Beyond Adjacent Layers: Graph-Guided Layer Fusion for Compressing Large Language Models},
-  author    = {Usama, Muhammad and Jung, Summer Yeoreum},
+  author    = {Usama, Muhammad and Jung, Yeoreum},
   booktitle = {Advances in Neural Information Processing Systems},
   year      = {2026}
 }
