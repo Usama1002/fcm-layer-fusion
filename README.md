@@ -4,7 +4,7 @@
 
 Muhammad Usama, Yeoreum Jung (Braindeck Inc, Seoul, Republic of Korea)
 
-This repository is the official code release for our NeurIPS 2026 paper.
+This repository is the official code release for our NeurIPS 2026 paper. [Read the paper on arXiv](https://arxiv.org/abs/2610.15159)
 
 **Fusion via Community Mining (FCM)** compresses large language models by removing redundant transformer layers. Unlike prior methods that treat layers independently or only merge adjacent or contiguous layers, FCM builds a full pairwise activation similarity graph over all layers, applies spectral community detection to discover clusters of functionally equivalent layers (including non-adjacent ones), and retains the single highest-Block-Influence layer per cluster. A lightweight LoRA recovery step restores performance.
 
