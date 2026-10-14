@@ -8,6 +8,12 @@ This repository is the official code release for our NeurIPS 2026 paper. [Read t
 
 **Fusion via Community Mining (FCM)** compresses large language models by removing redundant transformer layers. Unlike prior methods that treat layers independently or only merge adjacent or contiguous layers, FCM builds a full pairwise activation similarity graph over all layers, applies spectral community detection to discover clusters of functionally equivalent layers (including non-adjacent ones), and retains the single highest-Block-Influence layer per cluster. A lightweight LoRA recovery step restores performance.
 
+<p align="center">
+  <img src="assets/fcm_overview.png" alt="FCM pipeline overview" width="100%">
+</p>
+
+*Overview of FCM. (1) Profile pairwise activation similarity across all L layers; early and late layers are similar despite being far apart. (2) Spectral community detection groups layers into communities that may be non-adjacent. (3) Keep the highest Block Influence layer per community, then recover with LoRA.*
+
 Across thirteen models from six architecture families (1.6B to 14B parameters), non-adjacent high-similarity layer pairs outnumber adjacent ones by 3.6x to 15.9x. At 2x depth compression, FCM lowers mean perplexity below ShortGPT on 12 of 13 models (up to 50% on Qwen3-4B), significant on 10 under a two-sided Welch's t-test with Holm-Bonferroni correction; 2 are statistical ties and Mistral-7B is the one loss. Against ShortGPT, FlattenGPT, SWM, and DeltaLLM on all 13 models, FCM has the best perplexity on 10 of 13 (suite-wide mean rank 1.15). The gains carry over to zero-shot reasoning, MMLU, LAMBADA, HumanEval, and free-form generation.
 
 ## Key Results
@@ -153,6 +159,7 @@ fcm-layer-fusion/
     visualize.py    # Plotting utilities
   experiments/      # Experiment scripts (research log)
   results/          # Experiment outputs (JSON, numpy arrays)
+  assets/           # Figures used in this README
   reproduce.py      # One-command reproduction script
   requirements.txt  # Python dependencies
 ```
